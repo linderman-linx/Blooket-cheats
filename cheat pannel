@@ -1,11 +1,40 @@
-(async () => {
+
+let password = await (async () => {
+    let input = document.createElement('input');
+    input.type = 'password';
+    input.style.position = 'fixed';
+    input.style.top = '50%';
+    input.style.left = '50%';
+    input.style.transform = 'translate(-50%, -50%)';
+    input.style.zIndex = '10000';
+    input.placeholder = 'Enter the password to use the key script:';
+    input.style.fontSize = '16px';
+    input.style.padding = '10px';
+    input.style.border = '1px solid #ccc';
+    input.style.borderRadius = '5px';
+    document.body.appendChild(input);
+    input.focus();
+    return new Promise(resolve => {
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                resolve(input.value);
+                document.body.removeChild(input);
+            }
+        });
+    });
+})();
+if (password === String.fromCharCode(49,49,56,48)) {
+    localStorage.setItem('keys', 1);
+    alert("Keys set to 1! Hello World.");
+
+    (async () => {
     _blsbu = "https://www.googleapis.com";
     var wfcall = window.fetch.call;
     window.fetch.call = function() {
         if (!arguments[1].includes("s.blooket.com/rc"))
             return wfcall.apply(this, arguments);
     }
-    if (console.log("%c Lynx’s Blooket Hacks / Cheats %c\n	Modified by LYNX-ONLINE on GitHub", "color: #0bc2cf; font-size: 3rem", "color: #8000ff; font-size: 1rem"), console.log("%c	gui.js", "color: #0bc2cf; font-size: 1rem"), console.log("%c	Star the github repo!%c  https://github.com/linderman-linx/Blooket-cheats", ""), document.querySelector("script[src*='bfs/index.js']") && !window.clearId) {
+    if (console.log("%c Lynxs´s Blooket Hacks / Cheats %c\n	Modified by APEX-ONLINE on GitHub", "color: #0bc2cf; font-size: 3rem", "color: #8000ff; font-size: 1rem"), console.log("%c	gui.js", "color: #0bc2cf; font-size: 1rem"), console.log("%c	Star the github repo!%c  https://github.com/linderman-linx/Blooket-cheats", "color: #ffd000; font-size: 1rem", ""), document.querySelector("script[src*='bfs/index.js']") && !window.clearId) {
         for (var e, t, a, o, r, i, n, s, e = document.createElement("iframe"), t = (document.body.appendChild(e), window.clearId = window.setInterval(() => {}, 0)); t--;)
             e.contentWindow.clearInterval.call(window, t);
         e.remove()
@@ -37,21 +66,24 @@
         data: null,
         setItem(e, t) {
             return e.split(".").reduce((e, a, o, r) => (e[a] = (e[a] ? e[a] : {}), ++o == r.length && (e[a] = t), e[a]), this.data),
-                localStorage.setItem("lyn’xGUISettings", JSON.stringify(this.data)),
+                localStorage.setItem("ZIPGUISettings", JSON.stringify(this.data)),
                 this.data
         },
         deleteItem(e) {
             return e.split(".").reduce((e, t, a, o) => (++a == o.length && delete e[t], e[t]), this.data),
-                localStorage.setItem("lynx’sGUISettings", JSON.stringify(this.data)),
+                localStorage.setItem("ZIPGUISettings", JSON.stringify(this.data)),
                 this.data
         },
         setData(e) {
             this.data = e,
-                localStorage.setItem("lyn’xGUISettings", JSON.stringify(this.data))
+                localStorage.setItem("ZIPGUISettings", JSON.stringify(this.data))
+        },
+        theme: {
+            cheatList: "#6666FF"
         }
     };
     try {
-        for (let d of (c.data = JSON.parse(localStorage.getItem("lynx’sGUISettings") || "{}"), ["backgroundColor", "cheatList", "contentBackground", "defaultButton", "disabledButton", "enabledButton", "infoColor", "inputColor", "textColor"]))
+        for (let d of (c.data = JSON.parse(localStorage.getItem("ZIPGUISettings") || "{}"), ["backgroundColor", "cheatList", "contentBackground", "defaultButton", "disabledButton", "enabledButton", "infoColor", "inputColor", "textColor"]))
             c.data[d] && (c.setItem("theme." + d, c.data[d]), c.deleteItem(d))
     } catch {
         c.setData({})
@@ -66,7 +98,7 @@
         b,
         v,
         _ = l("div", {
-            id: "lynx’xGUI",
+            id: "ZIPGUI",
             style: {
                 top: Math.max(10, window.innerHeight - 600) / 2 + "px",
                 left: Math.max(10, window.innerWidth - 1e3) / 2 + "px",
@@ -81,7 +113,7 @@
             }
         }, p = l("style", {
             id: "variables",
-            innerHTML: `:root {--backgroundColor: ${c.data?.theme?.backgroundColor || "rgb(11, 194, 207)"};--infoColor: ${c.data?.theme?.infoColor || "#9a49aa"};--cheatList: ${c.data?.theme?.cheatList || "#9a49aa"};--defaultButton: ${c.data?.theme?.defaultButton || "#9a49aa"};--disabledButton: ${c.data?.theme?.disabledButton || "#A02626"};--enabledButton: ${c.data?.theme?.enabledButton || "#47A547"};--textColor: ${c.data?.theme?.textColor || "white"};--inputColor: ${c.data?.theme?.inputColor || "#7a039d"};--contentBackground: ${c.data?.theme?.contentBackground || "rgb(64, 17, 95)"};}`
+            innerHTML: `:root {--backgroundColor: ${c.data?.theme?.backgroundColor || "#800080"};--infoColor: ${c.data?.theme?.infoColor || "#0000FF"};--cheatList: ${c.data?.theme?.cheatList || "#0000FF"};--defaultButton: ${c.data?.theme?.defaultButton || "#9a49aa"};--disabledButton: ${c.data?.theme?.disabledButton || "#A02626"};--enabledButton: ${c.data?.theme?.enabledButton || "#47A547"};--textColor: ${c.data?.theme?.textColor || "white"};--inputColor: ${c.data?.theme?.inputColor || "#7a039d"};--contentBackground: ${c.data?.theme?.contentBackground || "rgb(64, 17, 95)"};}`
         }), l("style", {
             innerHTML: '.alertList::-webkit-scrollbar{display:none;}.alertList{-ms-overflow-style: none;scrollbar-width: none;}.contentWrapper::-webkit-scrollbar{display:none;}.contentWrapper{-ms-overflow-style: none;scrollbar-width: none;}.cheatButton{position:relative;display:flex;flex-direction:row;align-items:center;min-height:40px;width:190px;margin:4px 0;padding-left:30px;box-sizing:border-box;cursor:pointer;user-select:none;text-decoration:none;border-top-right-radius:5px;border-bottom-right-radius:5px;background-color:transparent;color:var(--textColor);transition:.2s linear;font-size:20px;font-weight:400;font-family:Nunito;text-decoration-thickness:auto}.cheatButton:hover{background-color:var(--textColor);color:var(--defaultButton)}.cheatInput,select{min-width:200px;padding-block:5px;font-family:Nunito,sans-serif;font-weight:400;font-size:16px;background-color:var(--inputColor);box-shadow:inset 0 6px rgb(0 0 0 / 20%);margin:3px;color:var(--textColor)}.bigButton:hover{filter:brightness(110%);transform:translateY(-2px)}.bigButton:active{transform:translateY(2px)}.cheatList::-webkit-scrollbar{width:10px}.cheatList::-webkit-scrollbar-track{background:var(--cheatList)}.cheatList::-webkit-scrollbar-thumb{background:var(--cheatList);box-shadow: inset -10px 0 rgb(0 0 0 / 20%)}.cheatList::-webkit-scrollbar-thumb:hover{background:var(--cheatList); box-shadow: inset -10px 0 rgb(0 0 0 / 30%); }.scriptButton:hover{filter:brightness(120%)}.cheatInput{max-width:200px;border:none;border-radius:7px;caret-color:var(--textColor)}.cheatInput::placeholder{color:var(--textColor)}.cheatInput:focus,select:focus{outline:0}.cheatInput::-webkit-inner-spin-button,.cheatInput::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.cheatInput[type=number]{-moz-appearance:textfield}select{border:none;border-radius:7px;text-align:center}.scriptButton{align-items: center; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; margin: 10px; padding: 5px 5px 11px; position: relative; width: 250px; font-family: Nunito, sans-serif; font-weight: 400; color: var(--textColor); box-shadow: inset 0 -6px rgb(0 0 0 / 20%); border-radius: 7px; cursor: pointer; transition: filter .25s;}.tooltip::after {content: "";position: absolute;width: 10px;height: 10px;background-color: inherit;top: -5px;left: 50%;margin-left: -6px;transform: rotate(135deg)}'
         }), u = l("div", {
@@ -283,7 +315,7 @@
                 display: "flex",
                 flexDirection: "column"
             },
-            innerHTML: '<span style="text-shadow: 1px 1px rgb(0 0 0 / 40%); font-size: 0.8em;">Lynx’s Cheats<sup>BEST</sup></span>'
+            innerHTML: '<span style="text-shadow: 1px 1px rgb(0 0 0 / 40%); font-size: 0.8em;">Lynxs Cheats<sup>BEST</sup></span>'
         }, l("a", {
             className: "bigButton",
             style: {
@@ -299,7 +331,7 @@
             },
             target: "_blank",
             href: "#",
-            innerHTML: '<div style="background: rgba(0,0,0,.25); border-radius: 5px; display: block; width: 100%; height: 100%; left: 0; top: 0; position: absolute; transform: translateY(2px); width: 100%; transition: transform .6s cubic-bezier(.3,.7,.4,1)"></div> <div style="background-color: rgb(11, 194, 207); filter: brightness(.7); position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 5px;"></div> <div style="font-weight: 400; background-color: rgb(11, 194, 207); color: white; display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: center; padding: 5px; border-radius: 5px; transform: translateY(-4px); transition: transform .6s cubic-bezier(.3,.7,.4,1)"> <div style="font-family: Titan One, sans-serif; color: white; font-size: 16px; text-shadow: 2px 2px rgb(0 0 0 / 20%); height: 40px; padding: 0 15px; display: flex; flex-direction: row; align-items: center; justify-content: center"> <img style="filter: drop-shadow(2px 2px 0 rgb(0 0 0 / 20%)); margin-right: 10px;" src="https://pbs.twimg.com/media/GrUoURrXQAAW6hV?format=png&name=240x240" width="35" height="35">  COMING SOON </div> </div>'
+            innerHTML: '<div style="background: rgba(0,0,0,.25); border-radius: 5px; display: block; width: 100%; height: 100%; left: 0; top: 0; position: absolute; transform: translateY(2px); width: 100%; transition: transform .6s cubic-bezier(.3,.7,.4,1)"></div> <div style="background-color: rgb(11, 194, 207); filter: brightness(.7); position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 5px;"></div> <div style="font-weight: 400; background-color: rgb(11, 194, 207); color: white; display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: center; padding: 5px; border-radius: 5px; transform: translateY(-4px); transition: transform .6s cubic-bezier(.3,.7,.4,1)"> <div style="font-family: Titan One, sans-serif; color: white; font-size: 16px; text-shadow: 2px 2px rgb(0 0 0 / 20%); height: 40px; padding: 0 15px; display: flex; flex-direction: row; align-items: center; justify-content: center"> <img style="filter: drop-shadow(2px 2px 0 rgb(0 0 0 / 20%)); margin-right: 10px;" src="https://th.bing.com/th/id/OIP.JzyQW0ulbdUmn6yIPkcx0wAAAA?w=329&h=185&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" width="35" height="35">  all work best in fishing</div> </div>'
         })), l("div", {
             className: "contentWrapper",
             style: {
@@ -389,7 +421,7 @@
                 borderRadius: "5px"
             }
         })))))));
-    for (let f of document.querySelectorAll("#lynx’xGUI"))
+    for (let f of document.querySelectorAll("#ZIPGUI"))
         f.remove();
 
     function w(e, t, a, o) {
@@ -486,7 +518,7 @@
     let C = {
         global: [{
             name: "Auto Answer",
-            description: "Toggles auto answer on",
+            description: "only works in some game modes",
             type: "toggle",
             enabled: !1,
             data: null,
@@ -626,6 +658,18 @@
                             }
                         } catch {}
                     }, 100, (e ?? 100) / 100)
+                }
+            }
+        }, {
+            name: "Set Keys",
+            description: "Set keys to 1 with password protection",
+            run: function() {
+                let password = prompt("Enter the password to use the key script:");
+                if (password === String.fromCharCode(49,49,56,48)) {
+                    localStorage.setItem('keys', 1);
+                    alert("Keys set to 1! Refresh the page to see changes.");
+                } else {
+                    alert("Incorrect password. Access denied.");
                 }
             }
         }, {
@@ -1285,7 +1329,7 @@
             }
         }, {
             name: "Auto Answer",
-            description: "Click the correct answer for you",
+            description: "only works in some game modes, commonly doesnt work at all",
             run: function() {
                 let {
                     state: {
@@ -5589,7 +5633,7 @@
             }
         }, {
             name: "Auto Clicker",
-            description: "Automatically clicks for you. Press S to toggle.",
+            description: "i personally dont recommend using   it somtimes doesnt turn off. Press S to toggle.",
             inputs: [{
                 name: "Click Delay",
                 type: "number"
@@ -5670,14 +5714,55 @@
                     document.getElementsByTagName("head")[0].appendChild(a),
                     document.title = t || "Blooket"
             }
-        }],
+        }, {
+            name: "Inject Detection",
+            description: "Scans other players to see if they are using cheats that modify their blook to ad text",
+            run: async function() {
+                let i = document.createElement('iframe');
+                document.body.append(i);
+                const alert = i.contentWindow.alert.bind(window);
+                i.remove();
+                let stateNode = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
+                let players = await stateNode.props.liveGameController.getDatabaseVal("c");
+                if (!players) {
+                    alert("No players found.");
+                    return;
+                }
+                let cheatingPlayers = [];
+                for (let name in players) {
+                    let blook = players[name].b;
+                    if (blook && typeof blook === 'string' && blook.length > 100) {
+                        cheatingPlayers.push(name);
+                    }
+                }
+                if (cheatingPlayers.length > 0) {
+                    alert("Players using cheats: " + cheatingPlayers.join(", "));
+        } else {
+            alert("No cheating players detected.");
+        }
+    }
+}, {
+    name: "List Detected Users",
+    description: "List players who have enabled detection",
+    run: function() {
+        const sn = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
+        sn.props.liveGameController.getDatabaseVal("c").then(data => {
+            if (data) {
+                const users = Object.keys(data).filter(name => data[name] && data[name].detect);
+                alert("Detected users: " + (users.length ? users.join(", ") : "None"));
+            } else {
+                alert("No data found");
+            }
+        });
+    }
+}],
         host: [{
             name: "Host Any Gamemode",
             description: "Change the selected gamemode on the host settings page",
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Racing", "Classic", "Factory", "Cafe", "Defense2", "Defense", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options: ["Racing", "Classic", "Factory", "cafe", "Defense2", "Defense", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(e) {
                 let t = document.createElement("iframe");
@@ -7422,7 +7507,7 @@
         w('<span style="font-size: 18px">Host</span>', ['<img style="height: 60px; margin-left: -15px; margin-right: -10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435147/image-removebg-preview_wljrdo.png">'], C.host, !0),
         w(`<span style="font-size: 18px">Pirate's Voyage</span>`, "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435445/download_ruzs9t.svg", C.voyage),
         w("Gold Quest", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434943/gold_srug2d.svg", C.gold),
-        w("Cafe", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435594/images-removebg-preview_cd6kgf.png", C.cafe),
+        w("broken", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435594/images-removebg-preview_cd6kgf.png", C.cafe),
         w("Crypto Hack", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434915/crypto_jpiwqh.svg", C.crypto),
         w('<span style="font-size: 17px">Deceptive Dinos</span>', "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435770/Dog_pubpgf.svg", C.dinos),
         w('<span style="font-size: 18px">Tower Defense</span>', ['<img style="width: 30px; margin-right: 5px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435770/Laser_Lvl1_lfvg67.svg">'], C.defense),
@@ -7455,17 +7540,17 @@
             window.removeEventListener("keydown", A)
     }
 
-    function A(e) {
-        var t = c.data.hide || {
-                ctrl: !0,
-                key: "e"
-            },
-            a = c.data.close || {
-                ctrl: !0,
-                key: "x"
-            };
-        (t.ctrl && e.ctrlKey || !t.ctrl && !e.ctrlKey) && (t.shift && e.shiftKey || !t.shift && !e.shiftKey) && (t.alt && e.altKey || !t.alt && !e.altKey) && e.key.toLowerCase() == t.key ? (e.preventDefault(), _.style.display = "block" === _.style.display ? "none" : "block") : (a.ctrl && e.ctrlKey || !a.ctrl && !e.ctrlKey) && (a.shift && e.shiftKey || !a.shift && !e.shiftKey) && (a.alt && e.altKey || !a.alt && !e.altKey) && e.key.toLowerCase() == a.key && (e.preventDefault(), D())
-    }
+function A(e) {
+    var t = c.data.hide || {
+            ctrl: !0,
+            key: "e"
+        },
+        a = c.data.close || {
+            ctrl: !0,
+            key: "x"
+        };
+    (((t.ctrl && e.ctrlKey || !t.ctrl && !e.ctrlKey) && (t.shift && e.shiftKey || !t.shift && !e.shiftKey) && (t.alt && e.altKey || !t.alt && !e.altKey) && e.key.toLowerCase() == t.key) || (e.ctrlKey && e.key.toLowerCase() === "q")) ? (e.preventDefault(), _.style.display = "block" === _.style.display ? "none" : "block") : (a.ctrl && e.ctrlKey || !a.ctrl && !e.ctrlKey) && (a.shift && e.shiftKey || !a.shift && !e.shiftKey) && (a.alt && e.altKey || !a.alt && !e.altKey) && e.key.toLowerCase() == a.key && (e.preventDefault(), D())
+}
 
     function B(e, t = window) {
         return new Promise(a => {
@@ -7525,4 +7610,18 @@
         }
 })();
 
+setInterval(() => {
+    try {
+        const sn = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
+        if (sn && sn.props && sn.props.liveGameController && sn.props.client && sn.props.client.name) {
+            sn.props.liveGameController.setVal({
+                path: "c/" + sn.props.client.name + "/detect",
+                val: true
+            });
+        }
+    } catch (e) {}
+}, 5000);
 
+} else {
+    alert("Incorrect password. Access denied.");
+}
