@@ -23,3 +23,5 @@ tutorial
 4. click console
 5. copy the code from this github repo
 6. paste the code into the console tab
+7. in the middle of your screen click that password bar
+8. put in the passcode 3090
