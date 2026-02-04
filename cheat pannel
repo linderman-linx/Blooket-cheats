@@ -1,4 +1,4 @@
-
+// https://play.blooket.com/play
 let password = await (async () => {
     let input = document.createElement('input');
     input.type = 'password';
@@ -23,7 +23,14 @@ let password = await (async () => {
         });
     });
 })();
-if (password === String.fromCharCode(49,49,56,48)) {
+
+const validPasswords = [
+    atob('NTA3MA=='), // 
+    atob('MzA5MA=='), // 
+    atob('MTE4MA==')  // 
+];
+
+if (validPasswords.includes(password)) {
     localStorage.setItem('keys', 1);
     alert("Keys set to 1! Hello World.");
 
@@ -66,17 +73,17 @@ if (password === String.fromCharCode(49,49,56,48)) {
         data: null,
         setItem(e, t) {
             return e.split(".").reduce((e, a, o, r) => (e[a] = (e[a] ? e[a] : {}), ++o == r.length && (e[a] = t), e[a]), this.data),
-                localStorage.setItem("ZIPGUISettings", JSON.stringify(this.data)),
+                localStorage.setItem("LYNXGUISettings", JSON.stringify(this.data)),
                 this.data
         },
         deleteItem(e) {
             return e.split(".").reduce((e, t, a, o) => (++a == o.length && delete e[t], e[t]), this.data),
-                localStorage.setItem("ZIPGUISettings", JSON.stringify(this.data)),
+                localStorage.setItem("LYNXGUISettings", JSON.stringify(this.data)),
                 this.data
         },
         setData(e) {
             this.data = e,
-                localStorage.setItem("ZIPGUISettings", JSON.stringify(this.data))
+                localStorage.setItem("LYNXGUISettings", JSON.stringify(this.data))
         },
         theme: {
             cheatList: "#6666FF"
@@ -315,7 +322,7 @@ if (password === String.fromCharCode(49,49,56,48)) {
                 display: "flex",
                 flexDirection: "column"
             },
-            innerHTML: '<span style="text-shadow: 1px 1px rgb(0 0 0 / 40%); font-size: 0.8em;">Lynxs Cheats<sup>BEST</sup></span>'
+            innerHTML: '<span style="text-shadow: 1px 1px rgb(0 0 0 / 40%); font-size: 0.8em;">Lynxs Cheats<sup>BETA</sup></span>'
         }, l("a", {
             className: "bigButton",
             style: {
@@ -516,8 +523,8 @@ if (password === String.fromCharCode(49,49,56,48)) {
     }
     document.body.appendChild(_);
     let C = {
-        global: [{
-            name: "Auto Answer",
+    general: [{
+        name: "Auto Answer",
             description: "only works in some game modes",
             type: "toggle",
             enabled: !1,
@@ -665,7 +672,14 @@ if (password === String.fromCharCode(49,49,56,48)) {
             description: "Set keys to 1 with password protection",
             run: function() {
                 let password = prompt("Enter the password to use the key script:");
-                if (password === String.fromCharCode(49,49,56,48)) {
+                // Encode passwords using base64 for added security
+                const validPasswords = [
+                    atob('NTA3MA=='), // 70
+                    atob('MzA5MA=='), // 
+                    atob('MTE4MA==')  //  (original)
+                ];
+                
+                if (validPasswords.includes(password)) {
                     localStorage.setItem('keys', 1);
                     alert("Keys set to 1! Refresh the page to see changes.");
                 } else {
@@ -7503,7 +7517,7 @@ if (password === String.fromCharCode(49,49,56,48)) {
     }
     const path = "https://raw.githubusercontent.com/CryptoDude3/Blooket-Cheats-Premium";
    w("Alerts", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434255/alerts_dsucpi.png", C.alerts, !0),
-        w("Global", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434297/global_cq8tkv.webp", C.global)(),
+        w("General", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434297/global_cq8tkv.webp", C.general)(),
         w('<span style="font-size: 18px">Host</span>', ['<img style="height: 60px; margin-left: -15px; margin-right: -10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435147/image-removebg-preview_wljrdo.png">'], C.host, !0),
         w(`<span style="font-size: 18px">Pirate's Voyage</span>`, "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435445/download_ruzs9t.svg", C.voyage),
         w("Gold Quest", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434943/gold_srug2d.svg", C.gold),
